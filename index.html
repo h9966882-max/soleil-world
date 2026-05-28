@@ -1,17 +1,81 @@
-Soleil no Oka / 2D Walk Prototype
-ソレイユの丘 散策版
-ひまわりの丘公園を、少しだけ歩いてみましょう。
-入口
-日誌
-🌻
-☕
-展望台
-光
-現在地
-丘の入口
-白い石畳の先に、ひまわりの丘公園が見えています。風はやわらかく、まだ一日は始まったばかりです。
-篤史：まずは、ゆっくり奥まで歩いてみようか。
-ソレイユ日誌へ
-↑
-← ↓ →
-PCなら矢印キー / WASD、iPhone・iPadなら画面ボタンで移動できます。
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ソレイユの丘 散策版</title>
+<!-- CSS -->
+<link rel="stylesheet" href="./soleil-world.css">
+</head>
+<body>
+<main class="app">
+    <header class="header">
+        <p class="eyebrow">Soleil no Oka / 2D Walk Prototype</p>
+        <h1>ソレイユの丘 散策版</h1>
+        <p class="lead">
+            ひまわりの丘公園を、少しだけ歩いてみましょう。
+        </p>
+    </header>
+    <section class="game-wrap">
+        <div id="game" class="game">
+            <div class="place gate">
+                入口
+            </div>
+            <div class="place diary">
+                日誌
+            </div>
+            <div class="place flowers">
+                🌻
+            </div>
+            <div class="place cafe">
+                ☕
+            </div>
+            <div class="place terrace">
+                展望台
+            </div>
+            <div id="avatar" class="avatar">
+                光
+            </div>
+        </div>
+        <aside class="panel">
+            <p class="panel-label">
+                現在地
+            </p>
+            <h2 id="placeTitle">
+                丘の入口
+            </h2>
+            <p id="placeText">
+                白い石畳の先に、ひまわりの丘公園が見えています。
+                風はやわらかく、まだ一日は始まったばかりです。
+            </p>
+            <p class="atsushi">
+                <strong>篤史：</strong>
+                <span id="atsushiText">
+                    まずは、ゆっくり奥まで歩いてみようか。
+                </span>
+            </p>
+            <a
+                class="diary-link"
+                href="#"
+                onclick="alert('ここからソレイユ日誌へ接続予定です'); return false;">
+                ソレイユ日誌へ
+            </a>
+        </aside>
+    </section>
+    <section class="controls">
+        <button id="up">↑</button>
+        <div>
+            <button id="left">←</button>
+            <button id="down">↓</button>
+            <button id="right">→</button>
+        </div>
+    </section>
+    <p class="note">
+        PCなら矢印キー / WASD<br>
+        iPhone・iPadなら画面ボタンで移動できます。
+    </p>
+</main>
+<!-- JavaScript -->
+<script src="./soleil-world.js"></script>
+</body>
+</html>
