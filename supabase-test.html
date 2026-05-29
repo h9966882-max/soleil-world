@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Supabase Test</title>
+</head>
+<body>
+
+<h1>Supabase接続テスト</h1>
+
+<button id="testBtn">
+接続確認
+</button>
+
+<pre id="result"></pre>
+
+<script type="module">
+
+import { supabase }
+from "./js/supabaseClient.js";
+
+const btn =
+document.getElementById("testBtn");
+
+const result =
+document.getElementById("result");
+
+btn.addEventListener("click", async () => {
+
+  const { data, error } =
+    await supabase
+      .from("projects")
+      .select("*");
+
+  result.textContent =
+    JSON.stringify(
+      { data, error },
+      null,
+      2
+    );
+
+});
+
+</script>
+
+</body>
+</html>
