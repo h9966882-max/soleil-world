@@ -1,7 +1,7 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
-const SUPABASE_URL = "ここにProject URLを入れる";
-const SUPABASE_PUBLISHABLE_KEY = "ここにPublishable keyを入れる";
+const SUPABASE_URL = "https://sclsozlhfaksfcgdggrg.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_N7gi3EbRyFFp_azw2H";
 
 export const supabase = createClient(
   SUPABASE_URL,
