@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Daily Log 保存テスト</title>
+</head>
+
+<body>
+
+<h1>Daily Log 保存テスト</h1>
+
+<input
+id="goal"
+placeholder="今日の目標">
+
+<br><br>
+
+<button id="saveBtn">
+保存
+</button>
+
+<pre id="result"></pre>
+
+<script type="module">
+
+import { supabase }
+from "./js/supabaseClient.js";
+
+const saveBtn =
+document.getElementById("saveBtn");
+
+const goalInput =
+document.getElementById("goal");
+
+const result =
+document.getElementById("result");
+
+saveBtn.addEventListener("click", async () => {
+
+const { data, error } =
+await supabase
+.from("daily_logs")
+.insert([
+{
+log_date: "2026-05-29",
+morning_goal: goalInput.value,
+morning_mood: "喜び",
+morning_task: "保存テスト"
+}
+])
+.select();
+
+result.textContent =
+JSON.stringify(
+{ data, error },
+null,
+2
+);
+
+});
+
+</script>
+
+</body>
+</html>
